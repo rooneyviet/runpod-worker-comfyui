@@ -1,5 +1,10 @@
 FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
 
+# Add build argument for Huggingface token
+ARG HUGGINGFACE_ACCESS_TOKEN
+ENV HUGGINGFACE_TOKEN=$HUGGINGFACE_ACCESS_TOKEN
+
+
 ENV DEBIAN_FRONTEND=noninteractive \
     PIP_PREFER_BINARY=1 \
     PYTHONUNBUFFERED=1
